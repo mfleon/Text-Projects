@@ -93,7 +93,7 @@ object functions {
     *
     * @see [[Sentence#posTags]]
     */
-  def pos = udf { sentence: String =>
+  def pos = udf { (lang:String, sentence: String) =>
     new Sentence(sentence).posTags().asScala
   }
 
@@ -102,7 +102,7 @@ object functions {
     *
     * @see [[Sentence#lemmas]]
     */
-  def lemma = udf { sentence: String =>
+  def lemma = udf { (lang:String, sentence: String) =>
     new Sentence(sentence).lemmas().asScala
   }
 
@@ -111,7 +111,7 @@ object functions {
     *
     * @see [[Sentence#nerTags]]
     */
-  def ner = udf { sentence: String =>
+  def ner = udf { (lang:String, sentence: String) =>
     new Sentence(sentence).nerTags().asScala
   }
 
